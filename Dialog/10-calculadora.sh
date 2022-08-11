@@ -5,7 +5,7 @@ function entrada_de_numeros {
 	until grep -E ^[0-9]+$ <<< $num1
 	do
 		num1=`dialog --stdout\
-			--backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			--backtitle "Programa Calculadora Dialog"\
 			--title "Entrada de número (Somente números!)"\
 			--ok-label "ENTER"\
 			--no-cancel\
@@ -14,7 +14,7 @@ function entrada_de_numeros {
 	until grep -E ^[0-9]+$ <<< $num2
         do
                 num2=`dialog --stdout\
-                        --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+                        --backtitle "Programa Calculadora Dialog"\
                         --title "Entrada de número (Somente números!)"\
                         --ok-label "ENTER"\
                         --no-cancel\
@@ -24,7 +24,7 @@ function entrada_de_numeros {
 entrada_de_numeros
 while ! [ "$OPCAO" = 9 ]; do
 	OPCAO=`dialog --stdout\
-		--backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+		--backtitle "Programa Calculadora Dialog"\
 		--title "Menu de opções"\
 			--ok-label "ENTER"\
 			--no-cancel\
@@ -41,19 +41,19 @@ while ! [ "$OPCAO" = 9 ]; do
 		9 "Sair da calculadora ---------------->"`
 	case $OPCAO in
 		1)
-			dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			dialog --backtitle "Programa Calculadora Dialog"\
 				--title "Resultado da Adição"\
 				--ok-label "ENTER"\
 				--msgbox "$num1 + $num2 = `echo "$num1 + $num2" | bc -l`" 0 0
 			;;
 		2)
-			dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			dialog --backtitle "Programa Calculadora Dialog"\
                                 --title "Resultado da Subtração"\
                                 --ok-label "ENTER"\
                                 --msgbox "$num1 - $num2 = `echo "$num1 - $num2" | bc -l`\n$num2 - $num1 = `echo "$num2 - $num1" | bc -l`" 0 0
                         ;;
 		3)
-			dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			dialog --backtitle "Programa Calculadora Dialog"\
                                 --title "Resultado da Multiplicação"\
                                 --ok-label "ENTER"\
                                 --msgbox "$num1 * $num2 = `echo "$num1 * $num2" | bc -l`" 0 0
@@ -69,19 +69,19 @@ while ! [ "$OPCAO" = 9 ]; do
                         else
                                 div1=`echo "IMPOSSÍVEL"`
                         fi
-			dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			dialog --backtitle "Programa Calculadora Dialog"\
                                 --title "Resultado da Divisão"\
                                 --ok-label "ENTER"\
                                 --msgbox "$num1 / $num2 = $div1\n$num2 / $num1 = $div2" 0 0
                         ;;
 		5)
-			dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			dialog --backtitle "Programa Calculadora Dialog"\
                                 --title "Resultado da Potenciação"\
                                 --ok-label "ENTER"\
                                 --msgbox "$num1 ^ $num2 = `echo "$num1 ^ $num2" | bc -l`\n$num2 ^ $num1 = `echo "$num2 ^ $num1" | bc -l`" 0 0
 			;;
 		6)
-			dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			dialog --backtitle "Programa Calculadora Dialog"\
                                 --title "Resultado da Raíz Quadrada"\
                                 --ok-label "ENTER"\
 				--msgbox "Raíz quadrada de $num1 é: `echo "sqrt($num1)" | bc -l`\nRaíz quadrada de $num2 é: `echo "sqrt($num2)" | bc -l`" 0 0
@@ -97,7 +97,7 @@ while ! [ "$OPCAO" = 9 ]; do
                         do
                                 FAT2=`echo "$FAT2 * $i" | bc -l`
                         done
-			dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			dialog --backtitle "Programa Calculadora Dialog"\
                                 --title "Resultado do Fatorial"\
                                 --ok-label "ENTER"\
                                 --msgbox "$num1! = $FAT1\n$num2! = $FAT2" 0 0
@@ -106,11 +106,11 @@ while ! [ "$OPCAO" = 9 ]; do
 			entrada_de_numeros
 			;;
 		9)
-			dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			dialog --backtitle "Programa Calculadora Dialog"\
                                 --title "Finalização do Programa"\
 				--infobox "Saindo da calculadora..." 0 0
 			sleep 3
-			apt moo 2>/dev/null | dialog --backtitle "Programa Calculadora Dialog - by Prof. Eduardo"\
+			apt moo 2>/dev/null | dialog --backtitle "Programa Calculadora Dialog"\
 				--title "Finalização do Programa"\
 				--ok-label "Sair da Calculadora"\
 				--programbox "Saindo da calculadora..." 14 30
